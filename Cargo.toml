@@ -1,0 +1,9 @@
+[package]
+name = "femina"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+regex = "1"
+reqwest = "0.9.16"
+rocket = "0.4.0"
