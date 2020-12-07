@@ -20,6 +20,6 @@ fn horoscope_handler(zodiac: String) -> String {
 fn horoscope(zodiac: String) -> String {
     let url = format!("https://www.femina.dk/horoskoper/{}/dagshoroskop", zodiac);
     let resp = reqwest::get(&url).unwrap().text().unwrap();
-    let re = Regex::new(".+?<span style=\"color: rgb\\(51, 51, 51\\);\">([^<]+)</span>.+").unwrap();
+    let re = Regex::new(r"\s{8}<p>(.+?)</p>").unwrap();
     re.captures(&resp).unwrap()[1].to_string()
 }
